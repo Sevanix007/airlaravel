@@ -31,6 +31,10 @@ Route::get('/data', function () {
 });
 
 
+Route::get('/login', function () {
+    return view('login');
+});
+
 
 //
 //

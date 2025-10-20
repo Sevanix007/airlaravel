@@ -29,7 +29,7 @@ class loginn extends Controller
  
 
         // Redirect to a desired location, e.g., home page
-        return back()->with('success', 'Registration successful!'); 
+        return back()->with('success', 'Lietotajs bija veiksmīgi registrēts!'); 
     }
 
     public function login(Request $request)
@@ -47,7 +47,7 @@ class loginn extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'email' => 'Nepareiza parole vai email!',
         ])->onlyInput('email');
     }
 
