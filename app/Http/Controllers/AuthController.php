@@ -59,5 +59,5 @@ class AuthController extends Controller
         return back()->withErrors([
             'login_email' => 'Nepareize parole vai email!',
         ])->onlyInput('login_email');
-    }
+    } 
 }
