@@ -25,21 +25,17 @@ public function register(Request $request)
         'password'=>Hash::make($credentials['password']),
     ]);
 
-    // Log the user in
-    Auth::login($user);
-    $request->session()->regenerate();
+
 
     // Redirect to a desired location, e.g., home page
     return redirect()->intended('/')->with('success', 'Lietotajs bija veiksmīgi registrēts!');
 }
 public function login(Request $request)
 {
-    $data = $request->validate([
+    $credentials = $request->validate([
         'email' => 'required|email',
         'password' => 'required',
     ]);
-
-    $credentials = $request->only('email', 'password');
 
     if (Auth::attempt($credentials)) {
         $request->session()->regenerate();
