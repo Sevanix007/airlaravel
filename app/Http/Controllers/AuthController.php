@@ -28,15 +28,14 @@ class AuthController extends Controller
         // Log the user in
         
 
-        // Redirect to a desired location, e.g., home page
-        return back()->with('success', 'Registration successful!'); 
-    }
-
+    // Log the user in
+    Auth::login($user);
 
     // Redirect to a desired location, e.g., home page
     return redirect()->intended('/')->with('success', 'Lietotajs bija veiksmīgi registrēts!');
 }
-    public function login(Request $request)
+
+public function login(Request $request)
     {
         // If your login form uses 'login_email' and 'login_password' as input names,
         // validate those and map to the credentials array used by Auth::attempt.
