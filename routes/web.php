@@ -195,7 +195,7 @@ Route::post('/darbinieki/{id}/editDarbinieksSubmit', 'App\Http\Controllers\DataC
 
 Route::get('/lidojums/{id}/editLidojums', 'App\Http\Controllers\DataController@editLidojums')->middleware('auth');
 
-Route::post('/lidojums/{id}/editLidojumsSubit', 'App\Http\Controllers\DataController@editDarbiniekiSubmit')->middleware('auth');
+Route::post('/lidojums/{id}/editLidojumsSubmit', 'App\Http\Controllers\DataController@editLidojumsSubmit')->middleware('auth');
 
 
 

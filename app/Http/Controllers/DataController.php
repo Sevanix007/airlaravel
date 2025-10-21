@@ -455,6 +455,39 @@ public function editLidojums($id) {
     return view('editlidojums', ['lidojums'=>$lidojums->find($id)]);
 }
 
+public function editLidojumsSubmit(Request $dati, $id)
+{   
+        $validation = $dati->validate([
+        'LidojumaNumurs' => 'required|min:2|max:20',
+        'IzlidesLidosta' => 'required',
+        'IelidesLidosta' => 'required',
+        'IzlidesLaiks' => 'required',
+        'IelidesLaiks' => 'required|after:IzlidesLaiks',
+        'LidmasinasID' => 'required|integer',
+        'Pilots1' => 'required|integer',
+        'Pilots2' => 'nullable|integer',
+        'Darbinieks1' => 'required|integer',
+        'Darbinieks2' => 'nullable|integer',
+
+    ])  ;    
+    
+    $lidojums = Lidojums::find($id);
+    $lidojums->LidojumaNumurs = $dati->input('LidojumaNumurs');
+    $lidojums->IzlidesLidosta = $dati->input('IzlidesLidosta');
+    $lidojums->IelidesLidosta = $dati->input('IelidesLidosta');
+    $lidojums->IzlidesLaiks = $dati->input('IzlidesLaiks');
+    $lidojums->IelidesLaiks = $dati->input('IelidesLaiks');
+    $lidojums->LidmasinasID = $dati->input('LidmasinasID');
+    $lidojums->Pilots1= $dati->input('Pilots1');
+    $lidojums->Pilots2 = $dati->input('Pilots2');
+    $lidojums->Darbinieks1 = $dati->input('Darbinieks1');
+    $lidojums->Darbinieks2 = $dati->input('Darbinieks2');
+
+    $lidojums->save();
+
+    return redirect()->to('/data/Lidojums')->with('successp', 'Veiksmīgi bija redigēts');
+}
+
 
 //
 //
