@@ -12,14 +12,14 @@
 <br>
 <table class="table table-bordered border-primary">
     <tr>
-        <th>RegNumurs</th>
+
         <th>LidmasinasModelis</th>
         <th>LidmasinasVietuSkaits</th>
         <th>Darbibas</th>
     </tr>
     @foreach($lidmasina as $el)
     <tr>
-        <td>{{ $el->RegNumurs }}</td>
+ 
         <td>{{ $el->LidmasinasModelis }}</td>
         <td>{{ $el->LidmasinasVietuSkaits }}</td>
         <td>

@@ -15,7 +15,7 @@
         <th>LidostasNosaukums</th>
         <th>LidostasKods</th>
         <th>Valsts</th>
-        <th>Pilseta</th>
+
         <th>Darbibas</th>
     </tr>
     @foreach($lidosta as $el)
@@ -23,7 +23,7 @@
         <td>{{ $el->LidostasNosaukums }}</td>
         <td>{{ $el->LidostasKods }}</td>
         <td>{{ $el->Valsts }}</td>
-        <td>{{ $el->Pilseta }}</td>
+
         <td>
             <a href="/lidosta/{{ $el->LidostasID }}/delete"
                class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">

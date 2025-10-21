@@ -11,8 +11,7 @@
         <th>IzlidesLaiks</th>
         <th>IelidesLaiks</th> 
         <th>LidmasinasID</th>
-        <th>Pilots1</th>
-        <th>Pilots2</th>
+
 
         <th>Darbības</th>
     </tr>
@@ -27,8 +26,7 @@
         <td>{{ $el->IzlidesLaiks }}</td>
         <td>{{ $el->IelidesLaiks }}</td>
         <td>{{ $el->LidmasinasID }}</td>
-        <td>{{ $el->Pilots1 }}</td>
-        <td>{{ $el->Pilots2 }}</td>
+
 
 
         <td>

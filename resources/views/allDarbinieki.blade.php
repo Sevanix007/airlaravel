@@ -10,7 +10,6 @@
         <th>Vārds</th>
         <th>Uzvārds</th>
         <th>Email</th>
-        <th>Login Name</th>
         <th>RoleID</th>
         <th>Darbības</th>
     </tr>
@@ -21,7 +20,6 @@
         <td>{{ $el->Vards }}</td>
         <td>{{ $el->Uzvards }}</td>
         <td>{{ $el->EMAIL }}</td>
-        <td>{{ $el->Login_name }}</td>
          <td>{{ $el->roles->RoleName ?? '—' }}</td>
         <td>
             <a href="/darbinieki/{{ $el->id }}/delete"
