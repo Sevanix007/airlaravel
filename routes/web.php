@@ -30,14 +30,14 @@ Route::get('/data', function () {
     return view('data');
 });
 
-Route::get('login', function () {
-    return view('login');
-});
+// Route::get('login', function () {
+//     return view('login');
+// });
 
 
 Route::get('/login', function () {
     return view('login');
-});
+})->name('login');
 
 
 Route::get('/register', function () {
@@ -54,25 +54,25 @@ Route::get('/register', function () {
 //
 
 Route::get('/roles/addRole', function () {
-    return view('addRole')->middleware('auth');
-});
+    return view('addRole');
+})->middleware('auth');
 
 Route::get('/lidmasinas/addLidmasina', function () {
-    return view('addLidmasina')->middleware('auth');
-});
+    return view('addLidmasina');
+})->middleware('auth');
 
 Route::get('/lidosta/addLidosta', function () {
-    return view('addLidosta')->middleware('auth');
-});
+    return view('addLidosta');
+})->middleware('auth');
 
 Route::get('/darbinieki/addDarbinieks', function () {
-    return view('addDarbinieki')->middleware('auth');
-});
+    return view('addDarbinieki');
+})->middleware('auth');
 
 
 Route::get('/lidojums/addLidojums', function () {
-    return view('addLidojums')->middleware('auth');
-});
+    return view('addLidojums');
+})->middleware('auth');
 
 
 //
