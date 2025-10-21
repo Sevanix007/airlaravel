@@ -32,7 +32,7 @@ class AuthController extends Controller
     // Auth::login($user);
 
     // Redirect to a desired location, e.g., home page
-    return redirect()->intended('/')->with('success', 'Lietotajs bija veiksmīgi registrēts!');
+    return back()->with('success', 'Lietotajs bija veiksmīgi registrēts!');
 }
 
 public function login(Request $request)
