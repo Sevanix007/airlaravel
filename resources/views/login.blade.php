@@ -13,13 +13,14 @@
             Ielogoties
         </div>
         <form class="p-3 mt-3" action="/loginSubmit" method="post">
+            @csrf
             <div class="form-field d-flex align-items-center">
                 <span class="far fa-user"></span>
                 <input type="text" name="login_email" id="userName" placeholder="Email">
             </div>
             <div class="form-field d-flex align-items-center">
                 <span class="fas fa-key"></span>
-                <input type="password" name="login_password" id="pwd" placeholder="Rarole">
+                <input type="password" name="login_password" id="pwd" placeholder="Parole">
             </div>
             <button type="submit" class="btn mt-3">Login</button>
         </form>
