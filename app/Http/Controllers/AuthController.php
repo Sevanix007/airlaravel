@@ -32,12 +32,18 @@ public function register(Request $request)
 }
     public function login(Request $request)
     {
-        $credentials = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
+        // If your login form uses 'login_email' and 'login_password' as input names,
+        // validate those and map to the credentials array used by Auth::attempt.
+        $request->validate([
+            'login_email' => 'required|email',
+            'login_password' => 'required',
         ]);
-        $username = $request->input('login_email');
-        $password = $request->input('login_password');
+
+        $credentials = [
+            'email' => $request->input('login_email'),
+            'password' => $request->input('login_password'),
+        ];
+
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
@@ -45,7 +51,7 @@ public function register(Request $request)
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
+            'login_email' => 'The provided credentials do not match our records.',
+        ])->onlyInput('login_email');
     }
 }
