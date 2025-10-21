@@ -47,7 +47,7 @@ public function register(Request $request)
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return view('home'); // Redirect to intended page or home
+            return redirect()->intended('/'); // Redirect to intended page or home
         }
 
         return back()->withErrors([
