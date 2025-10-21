@@ -47,7 +47,7 @@
     </tr>
     @endforeach
 </table>
-{{ $lidojums->links() }}
+{{ $lidojums->links('pagination::bootstrap-5') }}
 
 @if(session('success1'))
 <div class="alert alert-danger">
