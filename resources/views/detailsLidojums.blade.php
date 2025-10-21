@@ -19,7 +19,7 @@
         </p>
 
         <p><b>Izlides Laiks:</b> {{ $lidojums->IzlidesLaiks }}</p>
-        <p>Ielides Laiks: {{ $lidojums->IelidesLaiks }}</p>
+        <p><b>Ielides Laiks: </b>{{ $lidojums->IelidesLaiks }}</p>
 
         <p><b>Lidmašīna:</b>
             @if($lidmasina)
