@@ -14,8 +14,8 @@
                     <div class="text-end">
                   
                                                       @if (Auth::check())
-           <li class="btn btn-outline-light me-2"><a href="/logout" class="nav-link">Izlogoties</a></li>
+                 <a href="/login" class="btn btn-outline-light me-2">Izlogoties</a>
           @else
-           <li class="btn btn-outline-light me-2"><a href="/login" class="nav-link">Ielogoties</a></li>
+               <a href="/login" class="btn btn-outline-light me-2">Ieet</a>
            @endif
-                         <a href="/register" class="btn btn-warning">Registreties</a> </div> </div> </div> </header>
+                         <a href="/register" class="btn btn-warning">Registrēties</a> </div> </div> </div> </header>
