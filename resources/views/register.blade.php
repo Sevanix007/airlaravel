@@ -31,7 +31,12 @@
             <button type="submit" class="btn mt-3">Izveidot kontu</button>
         </form>
         <div class="text-center fs-6">
-            Ir konts? <a href="/login">Ieet!</a>
+                 @if (Auth::check())
+           Ir konts? <a href="/#">Ieet!</a>
+          @else
+       Ir konts? <a href="/login">Ieet!</a>
+           @endif
+           
         </div>
     </div>
 
