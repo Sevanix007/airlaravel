@@ -266,8 +266,8 @@ public function newDarbinieks(Request $dati) {
 public function newLidojums(Request $dati) {
     $validation = $dati->validate([
         'LidojumaNumurs' => 'required|min:2|max:20|unique:Lidojums,LidojumaNumurs',
-        'IzlidesLidosta' => 'required|min:2|max:50',
-        'IelidesLidosta' => 'required|min:2|max:50',
+        'IzlidesLidosta' => 'required',
+        'IelidesLidosta' => 'required',
         'IzlidesLaiks' => 'required',
         'IelidesLaiks' => 'required|after:IzlidesLaiks',
         'LidmasinasID' => 'required|integer',
