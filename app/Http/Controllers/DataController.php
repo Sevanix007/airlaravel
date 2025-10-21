@@ -77,7 +77,6 @@ public function showAllDarbinieki() {
     
     }
 
-
 //
 //
 //
@@ -117,9 +116,32 @@ public function details_dr($id) {
 
 
 public function details_lid($id) {     
-    $dd = "ddddd";                                                   
-    $lidojums = new Lidojums;                                                     
-    return view('detailsLidojums', ['lidojums'=>$lidojums->find($id)]);                                                        
+    // load main record
+    $lidojums = Lidojums::find($id);
+
+    if (!$lidojums) {
+        return redirect()->back()->with('success1', 'Lidojums nav atrasts');
+    }
+
+    // load related classifiers (safe lookups)
+    $izlidesLidosta = Lidosta::find($lidojums->IzlidesLidosta);
+    $ielidesLidosta = Lidosta::find($lidojums->IelidesLidosta);
+    $lidmasina = Lidmasina::find($lidojums->LidmasinasID);
+    $pilots1 = Darbinieki::find($lidojums->Pilots1);
+    $pilots2 = Darbinieki::find($lidojums->Pilots2);
+    $darbinieks1 = Darbinieki::find($lidojums->Darbinieks1);
+    $darbinieks2 = Darbinieki::find($lidojums->Darbinieks2);
+
+    return view('detailsLidojums', [
+        'lidojums' => $lidojums,
+        'izlidesLidosta' => $izlidesLidosta,
+        'ielidesLidosta' => $ielidesLidosta,
+        'lidmasina' => $lidmasina,
+        'pilots1' => $pilots1,
+        'pilots2' => $pilots2,
+        'darbinieks1' => $darbinieks1,
+        'darbinieks2' => $darbinieks2,
+    ]);                                                        
 }      
 
 
