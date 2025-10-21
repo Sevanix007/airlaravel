@@ -35,7 +35,7 @@
     </tr>
     @endforeach
 </table>
-{{ $lidmasina->links() }} 
+{{ $lidmasina->links('pagination::bootstrap-5') }}
 
 
 

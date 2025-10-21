@@ -37,8 +37,7 @@
     </tr>
     @endforeach
 </table>
-{{ $lidosta->links() }} 
-
+{{ $lidostas->links('pagination::bootstrap-5') }}
 
 
 @if(session('success1'))

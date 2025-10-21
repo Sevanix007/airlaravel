@@ -62,7 +62,7 @@
     </tr>
     @endforeach
 </table>
-{{ $data->links() }} 
+{{ $data->links('pagination::bootstrap-5') }}
 
 
 

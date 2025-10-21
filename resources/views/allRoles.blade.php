@@ -23,7 +23,7 @@
 </div>
 
 @endforeach
-{{ $roles->links() }} 
+{{ $roles->links('pagination::bootstrap-5') }}
 
 
 
