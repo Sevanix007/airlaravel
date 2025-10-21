@@ -12,7 +12,7 @@
         <div class="text-center mt-4 name">
             Ielogoties
         </div>
-        <form class="p-3 mt-3" action="/resiterSubmit" method="post">
+        <form class="p-3 mt-3" action="/regiterSubmit" method="post">
             @csrf
 
                         <div class="form-field d-flex align-items-center">
