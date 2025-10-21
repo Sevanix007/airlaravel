@@ -30,18 +30,22 @@ public function register(Request $request)
     // Redirect to a desired location, e.g., home page
     return redirect()->intended('/')->with('success', 'Lietotajs bija veiksmīgi registrēts!');
 }
-public function login(Request $request)
-{
-    $credentials = $request->validate([
-        'email' => 'required|email',
-        'password' => 'required',
-    ]);
+    public function login(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+        $username = $request->input('login_email');
+        $password = $request->input('login_password');
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
 
-    if (Auth::attempt($credentials)) {
-        $request->session()->regenerate();
-        return redirect()->intended('/');
+            return redirect()->intended('/'); // Redirect to intended page or home
+        }
+
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ])->onlyInput('email');
     }
-
-    return back()->withErrors(['email' => 'Nepareiza parole vai email!'])->withInput();
-}
 }
