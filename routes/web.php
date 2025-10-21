@@ -126,17 +126,17 @@ Route::post('/lidojums/newLidojums', 'App\Http\Controllers\DataController@newLid
 //
 
 
-Route::get('/data/all/{id}/Detalizeti', 'App\Http\Controllers\DataController@details')->name('data-details');
+Route::get('/data/all/{id}/Detalizeti', 'App\Http\Controllers\DataController@details')->name('data-details')->middleware('auth');
 
-Route::get('/roles/all/{id}/details_r', 'App\Http\Controllers\DataController@details_r')->name('roles-details');
+Route::get('/roles/all/{id}/details_r', 'App\Http\Controllers\DataController@details_r')->name('roles-details')->middleware('auth');
 
 Route::get('/lidmasina/{id}/details_l', 'App\Http\Controllers\DataController@details_l')->name('lidmasina-details')->middleware('auth');
 
-Route::get('/lidosta/{id}/details_lo', 'App\Http\Controllers\DataController@details_lo')->name('lidosta-details');
+Route::get('/lidosta/{id}/details_lo', 'App\Http\Controllers\DataController@details_lo')->name('lidosta-details')->middleware('auth');
 
-Route::get('/darbinieki/{id}/details_d', 'App\Http\Controllers\DataController@details_dr')->name('darbinieki-details');
+Route::get('/darbinieki/{id}/details_d', 'App\Http\Controllers\DataController@details_dr')->name('darbinieki-details')->middleware('auth');
 
-Route::get('/lidojums/{id}/details', 'App\Http\Controllers\DataController@details_lid');
+Route::get('/lidojums/{id}/details', 'App\Http\Controllers\DataController@details_lid')->name('lidojums-details')->middleware('auth');
 
 //
 //
@@ -146,17 +146,17 @@ Route::get('/lidojums/{id}/details', 'App\Http\Controllers\DataController@detail
 //
 //
 
-Route::get('/data/all/{id}/delete', 'App\Http\Controllers\DataController@delete'); 
+Route::get('/data/all/{id}/delete', 'App\Http\Controllers\DataController@delete')->middleware('auth'); 
 
-Route::get('/roles/all/{id}/delete', 'App\Http\Controllers\DataController@deleteR'); 
+Route::get('/roles/all/{id}/delete', 'App\Http\Controllers\DataController@deleteR')->middleware('auth'); 
 
-Route::get('/lidmasina/{id}/delete', 'App\Http\Controllers\DataController@deleteL'); 
+Route::get('/lidmasina/{id}/delete', 'App\Http\Controllers\DataController@deleteL')->middleware('auth'); 
 
-Route::get('/lidosta/{id}/delete', 'App\Http\Controllers\DataController@deleteLo'); 
+Route::get('/lidosta/{id}/delete', 'App\Http\Controllers\DataController@deleteLo')->middleware('auth'); 
 
-Route::get('/darbinieki/{id}/delete', 'App\Http\Controllers\DataController@deleteD'); 
+Route::get('/darbinieki/{id}/delete', 'App\Http\Controllers\DataController@deleteD')->middleware('auth'); 
 
-Route::get('/lidojums/{id}/delete', 'App\Http\Controllers\DataController@deleteLi'); 
+Route::get('/lidojums/{id}/delete', 'App\Http\Controllers\DataController@deleteLi')->middleware('auth'); 
 
 //
 //
@@ -167,29 +167,29 @@ Route::get('/lidojums/{id}/delete', 'App\Http\Controllers\DataController@deleteL
 //
 
 
-Route::get('/data/all/{id}/edit', 'App\Http\Controllers\DataController@edit');
+Route::get('/data/all/{id}/edit', 'App\Http\Controllers\DataController@edit')->middleware('auth');
 
-Route::post('/data/{id}/editSubmit', 'App\Http\Controllers\DataController@editSubmit');
-
-
-Route::get('/roles/all/{id}/edit', 'App\Http\Controllers\DataController@editRoles');
-
-Route::post('/roles/{RoleID}/editRoles', 'App\Http\Controllers\DataController@editRolesSubmit');
+Route::post('/data/{id}/editSubmit', 'App\Http\Controllers\DataController@editSubmit')->middleware('auth');
 
 
-Route::get('/lidmasina/{id}/edit', 'App\Http\Controllers\DataController@editLidmasina');
+Route::get('/roles/all/{id}/edit', 'App\Http\Controllers\DataController@editRoles')->middleware('auth');
 
-Route::post('/lidmasina/{LidmasinasID}/editLidmasinaSubmit', 'App\Http\Controllers\DataController@editLidmasinasSubmit');
-
-
-Route::get('/lidosta/{id}/edit', 'App\Http\Controllers\DataController@editLidosta');
-
-Route::post('/lidosta/{LidmasinasID}/editLidostaSubmit', 'App\Http\Controllers\DataController@editLidostaSubmit');
+Route::post('/roles/{RoleID}/editRoles', 'App\Http\Controllers\DataController@editRolesSubmit')->middleware('auth');
 
 
-Route::get('/darbinieki/{id}/edit', 'App\Http\Controllers\DataController@editDarbinieki');
+Route::get('/lidmasina/{id}/edit', 'App\Http\Controllers\DataController@editLidmasina')->middleware('auth');
 
-Route::post('/darbinieki/{id}/editDarbinieksSubmit', 'App\Http\Controllers\DataController@editDarbiniekiSubmit');
+Route::post('/lidmasina/{LidmasinasID}/editLidmasinaSubmit', 'App\Http\Controllers\DataController@editLidmasinasSubmit')->middleware('auth');
+
+
+Route::get('/lidosta/{id}/edit', 'App\Http\Controllers\DataController@editLidosta')->middleware('auth');
+
+Route::post('/lidosta/{LidmasinasID}/editLidostaSubmit', 'App\Http\Controllers\DataController@editLidostaSubmit')->middleware('auth');
+
+
+Route::get('/darbinieki/{id}/edit', 'App\Http\Controllers\DataController@editDarbinieki')->middleware('auth');
+
+Route::post('/darbinieki/{id}/editDarbinieksSubmit', 'App\Http\Controllers\DataController@editDarbiniekiSubmit')->middleware('auth');
 
 
 
