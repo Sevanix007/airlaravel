@@ -8,39 +8,29 @@
 <table class="table table-bordered border-primary">
     <tr>
         <th>LidojumaNumurs</th>
-        <th>IzlidesLidosta</th>
-        <th>IelidesLidosta</th>
         <th>IzlidesLaiks</th>
         <th>IelidesLaiks</th> 
         <th>LidmasinasID</th>
         <th>Pilots1</th>
         <th>Pilots2</th>
-        <th>Darbinieks1</th>
-        <th>Darbinieks2</th>
+
         <th>Darbības</th>
     </tr>
     @foreach($lidojums as $el)
     <tr>
         <td>{{ $el->LidojumaNumurs }}</td>
-        <td>{{ $el->lidostas->LidostasNosaukums ?? '—' }}</td>
+        <!-- <td>{{ $el->lidostas->LidostasNosaukums ?? '—' }}</td> -->
 
-            <!-- public function showAllLidojumi() {
-        $lidojums = Lidojums::with('darbinieki', 'lidostas', 'lidmasinas')->orderBy('LidojumaID', 'asc')->paginate(5);
-        return view('allLidojums', ['lidojums' => $lidojums]);
-    
-    }    
+
         
-    
-    My function-->
-        <td>{{ $el->IelidesLidosta }}</td>
+
         <td>{{ $el->IzlidesLaiks }}</td>
         <td>{{ $el->IelidesLaiks }}</td>
         <td>{{ $el->LidmasinasID }}</td>
         <td>{{ $el->Pilots1 }}</td>
         <td>{{ $el->Pilots2 }}</td>
 
-         <td>{{ optional($el->darbinieki->first())->Vards ?? '—' }}</td>
-        <td>{{ $el->Darbinieks2 }}</td>
+
         <td>
             <a href="/lidojums/{{ $el->LidojumaID }}/delete"
                class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
