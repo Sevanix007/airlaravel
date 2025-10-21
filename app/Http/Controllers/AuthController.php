@@ -10,48 +10,42 @@ class AuthController extends Controller
 {
     //
 
-    public function register(Request $request)
-    {
-        $credentials = $request->validate([
-            'name' => 'required|string|max:255',
-            'password' => 'required',
-            'email' => 'required',
-        ]);
+public function register(Request $request)
+{
+    $credentials = $request->validate([
+        'name' => 'required|string|max:255',
+        'password' => 'required',
+        'email' => 'required|email',
+    ]);
 
-        // Create the user
-        $user = User::create([
-            'name' => $credentials['name'],
-            'email' => $credentials['email'],
-            'password'=>Hash::make($credentials['password']),
-        ]);
+    // Create the user
+    $user = User::create([
+        'name' => $credentials['name'],
+        'email' => $credentials['email'],
+        'password'=>Hash::make($credentials['password']),
+    ]);
 
-        // Log the user in
- 
+    // Log the user in
+    Auth::login($user);
+    $request->session()->regenerate();
 
-        // Redirect to a desired location, e.g., home page
-        return back()->with('success', 'Lietotajs bija veiksmīgi registrēts!'); 
-    }
-
+    // Redirect to a desired location, e.g., home page
+    return redirect()->intended('/')->with('success', 'Lietotajs bija veiksmīgi registrēts!');
+}
 public function login(Request $request)
 {
     $data = $request->validate([
-        'login_email' => 'required|email',
-        'login_password' => 'required',
+        'email' => 'required|email',
+        'password' => 'required',
     ]);
 
-    $credentials = [
-        'email' => $data['login_email'],
-        'password' => $data['login_password'],
-    ];
+    $credentials = $request->only('email', 'password');
 
     if (Auth::attempt($credentials)) {
         $request->session()->regenerate();
         return redirect()->intended('/');
     }
 
-    return back()->with('successno', 'Nepareiza parole vai email!');}
-
-
-
-
+    return back()->withErrors(['email' => 'Nepareiza parole vai email!'])->withInput();
+}
 }

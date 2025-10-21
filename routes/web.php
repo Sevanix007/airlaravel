@@ -36,6 +36,11 @@ Route::get('/login', function () {
 });
 
 
+Route::get('/register', function () {
+    return view('register');
+});
+
+
 //
 //
 //
@@ -191,6 +196,9 @@ Route::post('/darbinieki/{id}/editDarbinieksSubmit', 'App\Http\Controllers\DataC
 //
 
 Route::post('/loginSubmit', 'App\Http\Controllers\AuthController@login');
+
+
+Route::post('/registerSubmit', 'App\Http\Controllers\AuthController@register');
 
 
 

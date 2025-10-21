@@ -12,5 +12,5 @@
                         <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search"> 
                     </form>
                     <div class="text-end">
-                        <a href="/login" class="btn btn-outline-light me-2">Login</a>
-<button type="button" class="btn btn-warning">Sign-up</button> </div> </div> </div> </header>
+                        <a href="/login" class="btn btn-outline-light me-2">Ieet</a>
+                         <a href="/register" class="btn btn-warning">Registraties</a> </div> </div> </div> </header>
