@@ -51,24 +51,24 @@ Route::get('/register', function () {
 
 Route::get('/roles/addRole', function () {
     return view('addRole');
-});
+})->middleware('auth');
 
 Route::get('/lidmasinas/addLidmasina', function () {
     return view('addLidmasina');
-});
+})->middleware('auth');
 
 Route::get('/lidosta/addLidosta', function () {
     return view('addLidosta');
-});
+})->middleware('auth');
 
 Route::get('/darbinieki/addDarbinieks', function () {
     return view('addDarbinieki');
-});
+})->middleware('auth');
 
 
 Route::get('/lidojums/addLidojums', function () {
     return view('addLidojums');
-});
+})->middleware('auth');
 
 
 //
@@ -79,17 +79,17 @@ Route::get('/lidojums/addLidojums', function () {
 //
 //
 
-Route::get('/data/allData', 'App\Http\Controllers\DataController@showAllData'); 
+Route::get('/data/allData', 'App\Http\Controllers\DataController@showAllData')->middleware('auth');
 
-Route::get('/data/allRoles', 'App\Http\Controllers\DataController@showAllRoles');
+Route::get('/data/allRoles', 'App\Http\Controllers\DataController@showAllRoles')->middleware('auth');
 
-Route::get('/data/Lidmasinas', 'App\Http\Controllers\DataController@showAllLidmasinas');
+Route::get('/data/Lidmasinas', 'App\Http\Controllers\DataController@showAllLidmasinas')->middleware('auth');
 
-Route::get('/data/Lidostas', 'App\Http\Controllers\DataController@showAllLidostas');
+Route::get('/data/Lidostas', 'App\Http\Controllers\DataController@showAllLidostas')->middleware('auth');
 
-Route::get('/data/Darbinieki', 'App\Http\Controllers\DataController@showAllDarbinieki'); 
+Route::get('/data/Darbinieki', 'App\Http\Controllers\DataController@showAllDarbinieki')->middleware('auth'); 
 
-Route::get('/data/Lidojums', 'App\Http\Controllers\DataController@showAllLidojumi');
+Route::get('/data/Lidojums', 'App\Http\Controllers\DataController@showAllLidojumi')->middleware('auth');
 
 //
 //
@@ -100,17 +100,17 @@ Route::get('/data/Lidojums', 'App\Http\Controllers\DataController@showAllLidojum
 //
 
     
-Route::post('/data/newSubmit', 'App\Http\Controllers\DataController@newSubmit');
+Route::post('/data/newSubmit', 'App\Http\Controllers\DataController@newSubmit')->middleware('auth');
 
-Route::post('/roles/newRole', 'App\Http\Controllers\DataController@newRole');
+Route::post('/roles/newRole', 'App\Http\Controllers\DataController@newRole')->middleware('auth');
 
-Route::post('/lidmasina/newLidmasina', 'App\Http\Controllers\DataController@newLidmasina');
+Route::post('/lidmasina/newLidmasina', 'App\Http\Controllers\DataController@newLidmasina')->middleware('auth');
 
-Route::post('/lidosta/newLidosta', 'App\Http\Controllers\DataController@newLidosta');
+Route::post('/lidosta/newLidosta', 'App\Http\Controllers\DataController@newLidosta')->middleware('auth');
 
-Route::post('/darbinieki/newDarbinieks', 'App\Http\Controllers\DataController@newDarbinieks');
+Route::post('/darbinieki/newDarbinieks', 'App\Http\Controllers\DataController@newDarbinieks')->middleware('auth');
 
-Route::post('/lidojums/newLidojums', 'App\Http\Controllers\DataController@newLidojums');
+Route::post('/lidojums/newLidojums', 'App\Http\Controllers\DataController@newLidojums')->middleware('auth');
 
 
 //
@@ -122,15 +122,15 @@ Route::post('/lidojums/newLidojums', 'App\Http\Controllers\DataController@newLid
 //
 
 
-Route::get('/data/all/{id}/Detalizeti', 'App\Http\Controllers\DataController@details')->name('data-details');
+Route::get('/data/all/{id}/Detalizeti', 'App\Http\Controllers\DataController@details')->name('data-details')->middleware('auth');
 
-Route::get('/roles/all/{id}/details_r', 'App\Http\Controllers\DataController@details_r')->name('roles-details');
+Route::get('/roles/all/{id}/details_r', 'App\Http\Controllers\DataController@details_r')->name('roles-details')->middleware('auth');
 
-Route::get('/lidmasina/{id}/details_l', 'App\Http\Controllers\DataController@details_l')->name('lidmasina-details');
+Route::get('/lidmasina/{id}/details_l', 'App\Http\Controllers\DataController@details_l')->name('lidmasina-details')->middleware('auth');
 
-Route::get('/lidosta/{id}/details_lo', 'App\Http\Controllers\DataController@details_lo')->name('lidosta-details');
+Route::get('/lidosta/{id}/details_lo', 'App\Http\Controllers\DataController@details_lo')->name('lidosta-details')->middleware('auth');
 
-Route::get('/darbinieki/{id}/details_d', 'App\Http\Controllers\DataController@details_dr')->name('darbinieki-details');
+Route::get('/darbinieki/{id}/details_d', 'App\Http\Controllers\DataController@details_dr')->name('darbinieki-details')->middleware('auth');
 
 Route::get('/lidojums/{id}/details', 'App\Http\Controllers\DataController@details_lid')->name('lidojums-details');
 
