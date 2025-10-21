@@ -26,7 +26,7 @@ class AuthController extends Controller
         ]);
 
         // Log the user in
-        //Ne nado takogo nam
+        
 
         // Redirect to a desired location, e.g., home page
         return back()->with('success', 'Registration successful!'); 
@@ -59,5 +59,5 @@ class AuthController extends Controller
         return back()->withErrors([
             'login_email' => 'Nepareize parole vai email!',
         ])->onlyInput('login_email');
-    } 
+    }
 }
