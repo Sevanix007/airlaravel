@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DataController;
 
 //
@@ -205,14 +206,13 @@ Route::post('/loginSubmit', 'App\Http\Controllers\AuthController@login');
 
 
 Route::post('/registerSubmit', 'App\Http\Controllers\AuthController@register');
-
-route::get('/logout', function(){
+Route::post('/logout', function () {
     Auth::logout();
     request()->session()->invalidate();
     request()->session()->regenerateToken();
     return redirect('/');
- 
-})->name('logout');
+})->middleware('auth')->name('logout');
+
 
 //
 //
