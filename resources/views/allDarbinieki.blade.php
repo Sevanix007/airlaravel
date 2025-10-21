@@ -9,8 +9,7 @@
     <tr>
         <th>Vārds</th>
         <th>Uzvārds</th>
-        <th>Email</th>
-        <th>RoleID</th>
+        <th>Loma</th>
         <th>Darbības</th>
     </tr>
     @foreach($darbinieki as $el)
@@ -19,7 +18,6 @@
 
         <td>{{ $el->Vards }}</td>
         <td>{{ $el->Uzvards }}</td>
-        <td>{{ $el->EMAIL }}</td>
          <td>{{ $el->roles->RoleName ?? '—' }}</td>
         <td>
             <a href="/darbinieki/{{ $el->id }}/delete"
