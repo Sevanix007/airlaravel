@@ -62,7 +62,7 @@
         </p>
 
         <a class="btn btn-danger" href="/lidojums/{{ $lidojums->LidojumaID }}/delete">Dzēst</a>
-        <a class="btn btn-warning" href="/lidojums/{{ $lidojums->LidojumaID }}/edit">Rediģēt</a>
+        <a class="btn btn-warning" href="/lidojums/{{ $lidojums->LidojumaID }}/editLidojums">Rediģēt</a>
     </div>
 
     @if(session('success1'))
