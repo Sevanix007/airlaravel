@@ -50,3 +50,8 @@ public function login(Request $request)
     }
 
     return back()->with('successno', 'Nepareiza parole vai email!');}
+
+
+
+
+}
