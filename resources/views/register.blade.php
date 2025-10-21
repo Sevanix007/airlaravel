@@ -36,10 +36,11 @@
     </div>
 
 
-@if(session('successno'))
-
+@if(session('success'))
+<center>
 <div class="alert alert-info">
-{{ session('successno') }}
+{{ session('success') }}
 </div>
+</center>
 @endif
 @endsection

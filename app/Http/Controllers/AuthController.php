@@ -10,21 +10,27 @@ class AuthController extends Controller
 {
     //
 
-public function register(Request $request)
-{
-    $credentials = $request->validate([
-        'name' => 'required|string|max:255',
-        'password' => 'required',
-        'email' => 'required|email',
-    ]);
+    public function register(Request $request)
+    {
+        $credentials = $request->validate([
+            'name' => 'required|string|max:40',
+            'password' => 'required',
+            'email' => 'required',
+        ]);
 
-    // Create the user
-    $user = User::create([
-        'name' => $credentials['name'],
-        'email' => $credentials['email'],
-        'password'=>Hash::make($credentials['password']),
-    ]);
+        // Create the user
+        $user = User::create([
+            'name' => $credentials['name'],
+            'email' => $credentials['email'],
+            'password'=>Hash::make($credentials['password']),
+        ]);
 
+        // Log the user in
+        //Ne nado takogo nam
+
+        // Redirect to a desired location, e.g., home page
+        return back()->with('success', 'Registration successful!'); 
+    }
 
 
     // Redirect to a desired location, e.g., home page
@@ -51,7 +57,7 @@ public function register(Request $request)
         }
 
         return back()->withErrors([
-            'login_email' => 'The provided credentials do not match our records.',
+            'login_email' => 'Nepareize parole vai email!',
         ])->onlyInput('login_email');
     }
 }
