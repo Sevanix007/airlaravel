@@ -28,7 +28,15 @@
             Nav konta? <a href="#">Registrēties!</a>
         </div>
     </div>
-
+  @if($errors->any())
+      <div class="alert alert-danger" style="max-width:800px;margin:20px auto;">
+        <ul class="mb-0">
+          @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+    @endif
 
 @if(session('successno'))
 
