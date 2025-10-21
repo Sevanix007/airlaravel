@@ -12,19 +12,19 @@
         <div class="text-center mt-4 name">
             Ielogoties
         </div>
-        <form class="p-3 mt-3">
+        <form class="p-3 mt-3" action="/loginSubmit" method="post">
             <div class="form-field d-flex align-items-center">
                 <span class="far fa-user"></span>
-                <input type="text" name="userName" id="userName" placeholder="Username">
+                <input type="text" name="login_email" id="userName" placeholder="Email">
             </div>
             <div class="form-field d-flex align-items-center">
                 <span class="fas fa-key"></span>
-                <input type="password" name="password" id="pwd" placeholder="Password">
+                <input type="password" name="login_password" id="pwd" placeholder="Rarole">
             </div>
-            <button class="btn mt-3">Login</button>
+            <button type="submit" class="btn mt-3">Login</button>
         </form>
         <div class="text-center fs-6">
-            <a href="#">Forget password?</a> or <a href="#">Sign up</a>
+            Nav konta? <a href="#">Registrēties!</a>
         </div>
     </div>
 

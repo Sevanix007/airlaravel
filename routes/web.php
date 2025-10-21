@@ -181,6 +181,19 @@ Route::get('/darbinieki/{id}/edit', 'App\Http\Controllers\DataController@editDar
 Route::post('/darbinieki/{id}/editDarbinieksSubmit', 'App\Http\Controllers\DataController@editDarbiniekiSubmit');
 
 
+
+//
+//
+//
+//AUTH -------------------------------
+//
+//
+//
+
+Route::post('/loginSubmit', 'App\Http\Controllers\AuthController@login');
+
+
+
 //
 //
 //
