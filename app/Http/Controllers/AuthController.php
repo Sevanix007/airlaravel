@@ -15,7 +15,7 @@ class AuthController extends Controller
         $credentials = $request->validate([
             'name' => 'required|string|max:40',
             'password' => 'required',
-            'email' => 'required',
+            'email' => 'required|email|max:255|unique:users',
         ]);
 
         // Create the user
@@ -29,7 +29,7 @@ class AuthController extends Controller
         
 
     // Log the user in
-    Auth::login($user);
+    // Auth::login($user);
 
     // Redirect to a desired location, e.g., home page
     return redirect()->intended('/')->with('success', 'Lietotajs bija veiksmīgi registrēts!');
