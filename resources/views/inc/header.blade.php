@@ -14,7 +14,7 @@
                     <div class="text-end">
                   
                                                       @if (Auth::check())
-                 <a href="/login" class="btn btn-outline-light me-2">Izlogoties</a>
+                 <a href="/logout" class="btn btn-outline-light me-2">Izlogoties</a>
           @else
                <a href="/login" class="btn btn-outline-light me-2">Ieet</a>
            @endif
