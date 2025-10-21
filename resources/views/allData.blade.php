@@ -15,6 +15,12 @@
 
 
 @extends('layouts.app')
+@if (Auth::check())
+
+
+        @else
+        <a href="/login" class="btn btn-outline-dark">Apskatit datus</a>
+        @endif
 </head>
 <body>
     <!-- @include('inc.header') -->
