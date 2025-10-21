@@ -1,4 +1,4 @@
-@extends ('layouts.app')
+@extends ('layouts.null')
 
 @section('content')
 
@@ -28,12 +28,6 @@
             Nav konta? <a href="#">Registrēties!</a>
         </div>
     </div>
-@if(session('success'))
-
-<div class="alert alert-info">
-{{ session('success') }}
-</div>
-@endif
 
 
 @if(session('successno'))
