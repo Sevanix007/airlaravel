@@ -132,6 +132,8 @@ Route::get('/lidosta/{id}/details_lo', 'App\Http\Controllers\DataController@deta
 
 Route::get('/darbinieki/{id}/details_d', 'App\Http\Controllers\DataController@details_dr')->name('darbinieki-details');
 
+Route::get('/lidojums/{id}/details', 'App\Http\Controllers\DataController@details_lid')->name('lidojums-details');
+
 //
 //
 //

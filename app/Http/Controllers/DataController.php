@@ -116,6 +116,14 @@ public function details_dr($id) {
 }      
 
 
+public function details_lid($id) {     
+    $dd = "ddddd";                                                   
+    $lidojums = new Lidojums;                                                     
+    return view('detailsLidojums', ['lidojums'=>$lidojums->find($id)]);                                                        
+}      
+
+
+
 
 
 
