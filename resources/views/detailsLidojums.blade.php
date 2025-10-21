@@ -10,15 +10,15 @@
             Numurs: {{ $lidojums->LidojumaNumurs }}
         </h4>
 
-        <p>Izlides Lidosta:
+        <p><b>Izlides Lidosta:</b>
             {{ $izlidesLidosta->LidostasNosaukums ?? $lidojums->IzlidesLidosta }}
         </p>
 
-        <p>Ielides Lidosta:
+        <p><b>Ielides Lidosta:</b>
             {{ $ielidesLidosta->LidostasNosaukums ?? $lidojums->IelidesLidosta }}
         </p>
 
-        <p>Izlides Laiks: {{ $lidojums->IzlidesLaiks }}</p>
+        <p><b>Izlides Laiks:</b> {{ $lidojums->IzlidesLaiks }}</p>
         <p>Ielides Laiks: {{ $lidojums->IelidesLaiks }}</p>
 
         <p>Lidmašīna:
