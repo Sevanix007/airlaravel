@@ -32,22 +32,21 @@ class AuthController extends Controller
         return back()->with('success', 'Lietotajs bija veiksmīgi registrēts!'); 
     }
 
-    public function login(Request $request)
-    {
-        $credentials = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-        $username = $request->input('login_email');
-        $password = $request->input('login_password');
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
+public function login(Request $request)
+{
+    $data = $request->validate([
+        'login_email' => 'required|email',
+        'login_password' => 'required',
+    ]);
 
-            return redirect()->intended('/'); // Redirect to intended page or home
-        }
+    $credentials = [
+        'email' => $data['login_email'],
+        'password' => $data['login_password'],
+    ];
 
-return back()->with('successno', 'Nepareiza parole vai email!'); 
+    if (Auth::attempt($credentials)) {
+        $request->session()->regenerate();
+        return redirect()->intended('/');
     }
 
-
-}
+    return back()->with('successno', 'Nepareiza parole vai email!');}
