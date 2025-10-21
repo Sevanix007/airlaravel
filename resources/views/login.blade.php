@@ -22,10 +22,10 @@
                 <span class="fas fa-key"></span>
                 <input type="password" name="login_password" id="pwd" placeholder="Parole">
             </div>
-            <button type="submit" class="btn mt-3">Login</button>
+            <button type="submit" class="btn mt-3">Ieet</button>
         </form>
         <div class="text-center fs-6">
-            Nav konta? <a href="#">Registrēties!</a>
+            Nav konta? <a href="/register">Registrēties!</a>
         </div>
     </div>
   @if($errors->any())

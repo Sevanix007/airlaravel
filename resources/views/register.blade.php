@@ -10,7 +10,7 @@
             <img src="https://blog.uniqkey.eu/wp-content/uploads/2023/08/password-recovery-methods.jpg" alt="">
         </div>
         <div class="text-center mt-4 name">
-            Ielogoties
+            Registrācija
         </div>
         <form class="p-3 mt-3" action="/registerSubmit" method="post">
             @csrf
@@ -28,10 +28,10 @@
                 <span class="fas fa-key"></span>
                 <input type="password" name="password" id="pwd" placeholder="Parole">
             </div>
-            <button type="submit" class="btn mt-3">Login</button>
+            <button type="submit" class="btn mt-3">Izveidot kontu</button>
         </form>
         <div class="text-center fs-6">
-            Ir konts? <a href="#">Ieet!</a>
+            Ir konts? <a href="/login">Ieet!</a>
         </div>
     </div>
 
