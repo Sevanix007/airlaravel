@@ -32,7 +32,7 @@
     </tr>
     @endforeach
 </table>
-{{ $darbinieki->links() }}
+{{ $darbinieki->links('pagination::bootstrap-5') }}
 
 @if(session('success1'))
 <div class="alert alert-danger">
