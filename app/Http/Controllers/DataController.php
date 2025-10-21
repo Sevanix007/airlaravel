@@ -452,7 +452,7 @@ public function editDarbiniekiSubmit(Request $dati, $id)
 
 public function editLidojums($id) {
     $lidojums = new Lidojums;
-    return view('editlidojums', ['lidojums'=>$darbinieki->find($id)]);
+    return view('editlidojums', ['lidojums'=>$lidojums->find($id)]);
 }
 
 
