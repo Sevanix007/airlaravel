@@ -50,25 +50,25 @@ Route::get('/register', function () {
 //
 
 Route::get('/roles/addRole', function () {
-    return view('addRole');
-})->middleware('auth');
+    return view('addRole')->middleware('auth');;
+});
 
 Route::get('/lidmasinas/addLidmasina', function () {
-    return view('addLidmasina');
-})->middleware('auth');
+    return view('addLidmasina')->middleware('auth');;
+});
 
 Route::get('/lidosta/addLidosta', function () {
-    return view('addLidosta');
-})->middleware('auth');
+    return view('addLidosta')->middleware('auth');;
+});
 
 Route::get('/darbinieki/addDarbinieks', function () {
-    return view('addDarbinieki');
-})->middleware('auth');
+    return view('addDarbinieki')->middleware('auth');;
+});
 
 
 Route::get('/lidojums/addLidojums', function () {
-    return view('addLidojums');
-})->middleware('auth');
+    return view('addLidojums')->middleware('auth');;
+});
 
 
 //
@@ -79,7 +79,7 @@ Route::get('/lidojums/addLidojums', function () {
 //
 //
 
-Route::get('/data/allData', 'App\Http\Controllers\DataController@showAllData')->middleware('auth');
+Route::get('/data/allData', 'App\Http\Controllers\DataController@showAllData')->middleware('auth');; 
 
 Route::get('/data/allRoles', 'App\Http\Controllers\DataController@showAllRoles')->middleware('auth');
 
@@ -130,7 +130,7 @@ Route::get('/lidmasina/{id}/details_l', 'App\Http\Controllers\DataController@det
 
 Route::get('/lidosta/{id}/details_lo', 'App\Http\Controllers\DataController@details_lo')->name('lidosta-details')->middleware('auth');
 
-Route::get('/darbinieki/{id}/details_d', 'App\Http\Controllers\DataController@details_dr')->name('darbinieki-details')->middleware('auth');
+Route::get('/darbinieki/{id}/details_d', 'App\Http\Controllers\DataController@details_dr')->name('darbinieki-details');
 
 Route::get('/lidojums/{id}/details', 'App\Http\Controllers\DataController@details_lid')->name('lidojums-details');
 
