@@ -28,5 +28,18 @@
             Nav konta? <a href="#">Registrēties!</a>
         </div>
     </div>
+@if(session('success'))
 
+<div class="alert alert-info">
+{{ session('success') }}
+</div>
+@endif
+
+
+@if(session('successno'))
+
+<div class="alert alert-info">
+{{ session('successno') }}
+</div>
+@endif
 @endsection

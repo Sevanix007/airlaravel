@@ -46,9 +46,7 @@ class AuthController extends Controller
             return redirect()->intended('/'); // Redirect to intended page or home
         }
 
-        return back()->withErrors([
-            'email' => 'Nepareiza parole vai email!',
-        ])->onlyInput('email');
+return back()->with('successno', 'Nepareiza parole vai email!'); 
     }
 
 
