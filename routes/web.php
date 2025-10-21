@@ -18,16 +18,16 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about')->middleware('auth');
 });
 
 
 Route::get('/contacts', function () {
-    return view('contacts');
+    return view('contacts')->middleware('auth');
 });
 
 Route::get('/data', function () {
-    return view('data');
+    return view('data')->middleware('auth');
 });
 
 // Route::get('login', function () {
