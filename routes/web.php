@@ -130,7 +130,7 @@ Route::get('/data/all/{id}/Detalizeti', 'App\Http\Controllers\DataController@det
 
 Route::get('/roles/all/{id}/details_r', 'App\Http\Controllers\DataController@details_r')->name('roles-details');
 
-Route::get('/lidmasina/{id}/details_l', 'App\Http\Controllers\DataController@details_l')->name('lidmasina-details');
+Route::get('/lidmasina/{id}/details_l', 'App\Http\Controllers\DataController@details_l')->name('lidmasina-details')->middleware('auth');
 
 Route::get('/lidosta/{id}/details_lo', 'App\Http\Controllers\DataController@details_lo')->name('lidosta-details');
 
