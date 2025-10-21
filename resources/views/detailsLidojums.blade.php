@@ -21,7 +21,7 @@
         <p><b>Izlides Laiks:</b> {{ $lidojums->IzlidesLaiks }}</p>
         <p>Ielides Laiks: {{ $lidojums->IelidesLaiks }}</p>
 
-        <p>Lidmašīna:
+        <p><b>Lidmašīna:</b>
             @if($lidmasina)
                 {{ $lidmasina->RegNumurs ?? '' }} {{ $lidmasina->LidmasinasModelis ? '('.$lidmasina->LidmasinasModelis.')' : '' }}
             @else
@@ -29,7 +29,7 @@
             @endif
         </p>
 
-        <p>Pilots 1:
+        <p><b>Pilots 1:</b>
             @if($pilots1)
                 {{ $pilots1->Vards ?? '' }} {{ $pilots1->Uzvards ?? '' }} (ID: {{ $pilots1->id ?? $pilots1->DarbinieksID ?? '—' }})
             @else
@@ -37,7 +37,7 @@
             @endif
         </p>
 
-        <p>Pilots 2:
+        <p><b>Pilots 2:</b>
             @if($pilots2)
                 {{ $pilots2->Vards ?? '' }} {{ $pilots2->Uzvards ?? '' }} (ID: {{ $pilots2->id ?? $pilots2->DarbinieksID ?? '—' }})
             @else
@@ -45,7 +45,7 @@
             @endif
         </p>
 
-        <p>Darbinieks 1:
+        <p><b>Darbinieks 1:</b>
             @if($darbinieks1)
                 {{ $darbinieks1->Vards ?? '' }} {{ $darbinieks1->Uzvards ?? '' }} (ID: {{ $darbinieks1->id ?? $darbinieks1->DarbinieksID ?? '—' }})
             @else
@@ -53,7 +53,7 @@
             @endif
         </p>
 
-        <p>Darbinieks 2:
+        <p><b>Darbinieks 2:</b>
             @if($darbinieks2)
                 {{ $darbinieks2->Vards ?? '' }} {{ $darbinieks2->Uzvards ?? '' }} (ID: {{ $darbinieks2->id ?? $darbinieks2->DarbinieksID ?? '—' }})
             @else
