@@ -91,9 +91,9 @@ Route::get('/data/Lidmasinas', 'App\Http\Controllers\DataController@showAllLidma
 
 Route::get('/data/Lidostas', 'App\Http\Controllers\DataController@showAllLidostas')->middleware('auth');
 
-Route::get('/data/Darbinieki', 'App\Http\Controllers\DataController@showAllDarbinieki'); 
+Route::get('/data/Darbinieki', 'App\Http\Controllers\DataController@showAllDarbinieki')->middleware('auth');
 
-Route::get('/data/Lidojums', 'App\Http\Controllers\DataController@showAllLidojumi');
+Route::get('/data/Lidojums', 'App\Http\Controllers\DataController@showAllLidojumi')->middleware('auth');
 
 //
 //
@@ -104,17 +104,17 @@ Route::get('/data/Lidojums', 'App\Http\Controllers\DataController@showAllLidojum
 //
 
     
-Route::post('/data/newSubmit', 'App\Http\Controllers\DataController@newSubmit');
+Route::post('/data/newSubmit', 'App\Http\Controllers\DataController@newSubmit')->middleware('auth');
 
-Route::post('/roles/newRole', 'App\Http\Controllers\DataController@newRole');
+Route::post('/roles/newRole', 'App\Http\Controllers\DataController@newRole')->middleware('auth');
 
-Route::post('/lidmasina/newLidmasina', 'App\Http\Controllers\DataController@newLidmasina');
+Route::post('/lidmasina/newLidmasina', 'App\Http\Controllers\DataController@newLidmasina')->middleware('auth');
 
-Route::post('/lidosta/newLidosta', 'App\Http\Controllers\DataController@newLidosta');
+Route::post('/lidosta/newLidosta', 'App\Http\Controllers\DataController@newLidosta')->middleware('auth');
 
-Route::post('/darbinieki/newDarbinieks', 'App\Http\Controllers\DataController@newDarbinieks');
+Route::post('/darbinieki/newDarbinieks', 'App\Http\Controllers\DataController@newDarbinieks')->middleware('auth');
 
-Route::post('/lidojums/newLidojums', 'App\Http\Controllers\DataController@newLidojums');
+Route::post('/lidojums/newLidojums', 'App\Http\Controllers\DataController@newLidojums')->middleware('auth');
 
 
 //
@@ -136,7 +136,7 @@ Route::get('/lidosta/{id}/details_lo', 'App\Http\Controllers\DataController@deta
 
 Route::get('/darbinieki/{id}/details_d', 'App\Http\Controllers\DataController@details_dr')->name('darbinieki-details');
 
-Route::get('/lidojums/{id}/details', 'App\Http\Controllers\DataController@details_lid')->name('lidojums-details');
+Route::get('/lidojums/{id}/details', 'App\Http\Controllers\DataController@details_lid');
 
 //
 //
