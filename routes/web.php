@@ -206,7 +206,13 @@ Route::post('/loginSubmit', 'App\Http\Controllers\AuthController@login');
 
 Route::post('/registerSubmit', 'App\Http\Controllers\AuthController@register');
 
-
+route::get('/logout', function(){
+    Auth::logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+    return redirect('/');
+ 
+})->name('logout');
 
 //
 //

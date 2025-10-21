@@ -12,5 +12,10 @@
                         <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search"> 
                     </form>
                     <div class="text-end">
-                        <a href="/login" class="btn btn-outline-light me-2">Ieet</a>
-                         <a href="/register" class="btn btn-warning">Registraties</a> </div> </div> </div> </header>
+                  
+                                                      @if (Auth::check())
+           <li class="btn btn-outline-light me-2"><a href="/logout" class="nav-link">Izlogoties</a></li>
+          @else
+           <li class="btn btn-outline-light me-2"><a href="/login" class="nav-link">Ielogoties</a></li>
+           @endif
+                         <a href="/register" class="btn btn-warning">Registreties</a> </div> </div> </div> </header>
