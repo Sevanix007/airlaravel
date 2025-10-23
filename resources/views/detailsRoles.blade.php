@@ -24,11 +24,5 @@
 
 
 
-@if(session('success1'))
-
-<div class="alert alert-danger">
-{{ session('success1') }}
-</div>
-@endif
 
 @endsection

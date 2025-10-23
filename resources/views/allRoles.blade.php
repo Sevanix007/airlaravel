@@ -36,6 +36,15 @@
 
 
 
+
+@if(session('success'))
+
+<div class="alert alert-info">
+{{ session('success') }}
+</div>
+@endif
+
+
 @if(session('success1'))
 
 <div class="alert alert-danger">
