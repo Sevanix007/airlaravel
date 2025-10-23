@@ -40,7 +40,7 @@ class DataController extends Controller
     {
         $roles = Roles::orderBy('RoleID', 'asc')->get();
         // return view('allRoles', ['roles' => $roles]);
-        return view('allRoles', ['roles' => DB::table('Roles')->orderBy('RoleID', 'asc')->paginate(5)]);
+        return view('allRoles', ['roles' => DB::table('Roles')->orderBy('RoleID', 'asc')->paginate(4)]);
     }
 
 
