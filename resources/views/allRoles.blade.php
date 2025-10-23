@@ -16,8 +16,17 @@
     <!-- ID : {{ $el->RoleID }} |  -->
      RoleName : {{ $el->RoleName }}</h4>
 
-<a href="/roles/all/{{ $el->RoleID }}/delete"> Dzēst </a>
-<a href="/roles/all/{{ $el->RoleID }}/details_r" > Detalizeti </a>
+
+
+
+            <a href="/roles/all/{{ $el->RoleID }}/delete"
+               class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+               Dzēst
+            </a>
+            <a href="/roles/all/{{ $el->RoleID }}/details_r"
+                  class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+               Detalizēti
+            </a>
 
 <br><br>
 </div>

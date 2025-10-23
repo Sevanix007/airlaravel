@@ -12,8 +12,11 @@
 <div class="alert alert-info">
 <h4> ID : {{ $roles->RoleID }} |  RoleName : {{ $roles->RoleName }}</h4>
 
-<a href="/roles/all/{{ $roles->RoleID }}/delete"> Dzēst </a>
-  <a class="btn btn-warning" href="/roles/all/{{$roles->RoleID}}/edit"> Rediget </a>
+
+
+
+  <a class="btn btn-danger" href="/roles/all/{{ $roles->RoleID }}/delete"> Dzēst </a>
+<a class="btn btn-warning" href="/roles/all/{{$roles->RoleID}}/edit"> Rediģēt </a>
 
 <br><br>
 </div>
